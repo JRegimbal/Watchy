@@ -623,11 +623,11 @@ weatherData Watchy::getWeatherData(){
             if(httpResponseCode == 200) {
                 String payload = http.getString();
                 JSONVar responseObject = JSON.parse(payload);
-                currentWeather.temperature = int(responseObject["main"]["temp"]);
-                currentWeather.feelsLike = int(responseObject["main"]["feels_like"]);
-                currentWeather.humidity = int(responseObject["main"]["humidity"]);
-                currentWeather.weatherConditionCode = int(responseObject["weather"][0]["id"]);            
-            }else{
+                currentWeather.temperature = round(double(responseObject["main"]["temp"]));
+                currentWeather.feelsLike = round(double(responseObject["main"]["feels_like"]));
+                currentWeather.humidity = round(double(responseObject["main"]["humidity"]));
+                currentWeather.weatherConditionCode = round(double(responseObject["weather"][0]["id"]));
+            else{
                 //http error
             }
             http.end();
