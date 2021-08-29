@@ -16,6 +16,8 @@
 
 typedef struct weatherData{
     int8_t temperature;
+    int8_t feelsLike;
+    int8_t humidity;
     int16_t weatherConditionCode;
 }weatherData;
 

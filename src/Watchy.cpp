@@ -624,6 +624,8 @@ weatherData Watchy::getWeatherData(){
                 String payload = http.getString();
                 JSONVar responseObject = JSON.parse(payload);
                 currentWeather.temperature = int(responseObject["main"]["temp"]);
+                currentWeather.feelsLike = int(responseObject["main"]["feels_like"]);
+                currentWeather.humidity = int(responseObject["main"]["humidity"]);
                 currentWeather.weatherConditionCode = int(responseObject["weather"][0]["id"]);            
             }else{
                 //http error
