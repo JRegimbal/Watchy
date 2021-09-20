@@ -640,6 +640,7 @@ weatherData Watchy::getWeatherData(){
                 temperature = temperature * 9. / 5. + 32.; //fahrenheit
             }
             currentWeather.temperature = temperature;
+            currentWeather.feelsLike = 127 ;    // max 8-bit signed
             currentWeather.weatherConditionCode = 800;
         }
         weatherIntervalCounter = 0;
